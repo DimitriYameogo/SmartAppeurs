@@ -1,0 +1,12 @@
+.table-view .column-header-background{
+    -fx-background-color: linear-gradient( #7fbf9d 0%, #117864 100%);
+}
+
+.table-view .column-header-background .label{
+    -fx-background-color: transparent;
+    -fx-text-fill: white;
+}
+
+.table-view .column-header {
+    -fx-background-color: transparent;
+}

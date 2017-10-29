@@ -1,0 +1,14 @@
+.toggle-button {
+
+    -fx-background: #009688;
+
+}
+
+.toggle-button:selected {
+
+    
+    -fx-background: #11514a;
+
+
+    -fx-effect: null;
+}

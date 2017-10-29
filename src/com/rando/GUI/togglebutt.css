@@ -1,0 +1,14 @@
+.toggle-button {
+
+    -fx-background-color: #009688;
+
+}
+
+.toggle-button:selected:focused {
+
+    
+   -fx-background-color: #11514a;
+
+
+  
+}

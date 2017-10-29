@@ -1,0 +1,26 @@
+.list-cell:filled:selected:focused, .list-cell:filled:selected {
+    -fx-background-color: linear-gradient( #005452 0.0%, #5ac7a8  25.0%, #1b7e7c 75.0%,  #005452 100.0%);
+    -fx-text-fill: white;
+-fx-alignment: center;
+-fx-padding: 6;
+}
+
+.list-cell{
+-fx-alignment: center;
+-fx-padding: 6 ;
+    -fx-font-size:15.0;
+}
+
+.list-cell:even { /* <=== changed to even */
+-fx-alignment: center;
+-fx-padding: 6 ;
+    -fx-background-color: white;
+	  -fx-text-fill: #005452;
+}
+
+.list-cell:filled:hover {
+-fx-alignment: center;
+-fx-padding: 6;
+    -fx-background-color: #5ac7a8;
+    -fx-text-fill: #005452;
+}

@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextArea?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.geometry.Insets?>
+<?import javafx.geometry.Rectangle2D?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="575.0" prefWidth="719.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.rando.GUI.LieupageController">
+   <children>
+      <SplitPane orientation="VERTICAL" prefHeight="575.0" prefWidth="727.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <items>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="145.0" prefWidth="660.0" style="-fx-background-color: white;">
+               <children>
+                  <AnchorPane layoutX="-2.0" layoutY="140.0" minHeight="0.0" minWidth="0.0" prefHeight="381.0" prefWidth="717.0" style="-fx-background-color: white;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+                     <children>
+                        <Label layoutX="70.0" layoutY="14.0" prefHeight="16.0" prefWidth="67.0" text="Description :" textFill="#117864">
+                           <font>
+                              <Font size="12.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="70.0" layoutY="219.0" prefHeight="17.0" prefWidth="85.0" text="Governorat :" textFill="#117864">
+                           <font>
+                              <Font size="12.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="70.0" layoutY="273.0" prefHeight="16.0" prefWidth="67.0" text="Ville :" textFill="#117864">
+                           <font>
+                              <Font size="12.0" />
+                           </font>
+                        </Label>
+                        <JFXTextArea fx:id="affichdesc" cache="true" cacheHint="QUALITY" cacheShape="false" centerShape="false" editable="false" focusColor="#266546" focusTraversable="false" layoutX="70.0" layoutY="52.0" prefHeight="150.0" prefWidth="358.0" scaleShape="false" style="-fx-border-color: white; -fx-border-width: 0;" unFocusColor="#34725d">
+                           <font>
+                              <Font size="12.0" />
+                           </font>
+                        </JFXTextArea>
+                        <Pane fx:id="panedesc" layoutX="14.0" layoutY="193.0" prefHeight="17.0" prefWidth="633.0" style="-fx-background-color: white;" />
+                        <JFXTextField fx:id="affichvlle" focusColor="#266546" layoutX="222.0" layoutY="270.0" prefHeight="24.0" prefWidth="206.0" unFocusColor="#34725d" />
+                        <JFXTextField fx:id="affichgov" focusColor="#266546" layoutX="222.0" layoutY="216.0" prefHeight="24.0" prefWidth="206.0" unFocusColor="#34725d" />
+                        <Pane fx:id="panegov" layoutX="219.0" layoutY="240.0" prefHeight="17.0" prefWidth="213.0" style="-fx-background-color: white;" />
+                        <Pane fx:id="paneville" layoutX="219.0" layoutY="294.0" prefHeight="17.0" prefWidth="213.0" style="-fx-background-color: white;" />
+                        <JFXButton fx:id="descmicon" contentDisplay="GRAPHIC_ONLY" layoutX="128.0" layoutY="7.0" onAction="#descModif" prefHeight="24.0" prefWidth="36.0">
+                           <graphic>
+                              <ImageView fitHeight="24.0" fitWidth="25.0" pickOnBounds="true">
+                                 <image>
+                                    <Image url="@../img/pencil_tip1600.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </JFXButton>
+                        <JFXButton fx:id="govmicon" contentDisplay="GRAPHIC_ONLY" layoutX="128.0" layoutY="212.0" onAction="#govModif" prefHeight="24.0" prefWidth="36.0">
+                           <graphic>
+                              <ImageView fitHeight="24.0" fitWidth="25.0" pickOnBounds="true">
+                                 <image>
+                                    <Image url="@../img/pencil_tip1600.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </JFXButton>
+                        <JFXButton fx:id="villemicon" contentDisplay="GRAPHIC_ONLY" layoutX="92.0" layoutY="266.0" onAction="#villeModif" prefHeight="24.0" prefWidth="36.0">
+                           <graphic>
+                              <ImageView fitHeight="24.0" fitWidth="25.0" pickOnBounds="true">
+                                 <image>
+                                    <Image url="@../img/pencil_tip1600.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </JFXButton>
+                        <JFXButton fx:id="descsicon" contentDisplay="GRAPHIC_ONLY" layoutX="391.0" layoutY="170.0" onAction="#descSub" opacity="0.0" prefHeight="24.0" prefWidth="36.0">
+                           <graphic>
+                              <ImageView fitHeight="24.0" fitWidth="25.0" pickOnBounds="true">
+                                 <image>
+                                    <Image url="@../img/arrow-download-install-save-document-file-36da3a2e21defbd9-512x512.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </JFXButton>
+                        <JFXButton fx:id="villesicon" contentDisplay="GRAPHIC_ONLY" layoutX="432.0" layoutY="266.0" onAction="#villeSub" opacity="0.0" prefHeight="24.0" prefWidth="36.0">
+                           <graphic>
+                              <ImageView fitHeight="24.0" fitWidth="25.0" pickOnBounds="true">
+                                 <image>
+                                    <Image url="@../img/arrow-download-install-save-document-file-36da3a2e21defbd9-512x512.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </JFXButton>
+                        <JFXButton fx:id="govsicon" contentDisplay="GRAPHIC_ONLY" layoutX="432.0" layoutY="205.0" onAction="#govSub" opacity="0.0" prefHeight="39.0" prefWidth="49.0">
+                           <graphic>
+                              <ImageView fitHeight="24.0" fitWidth="25.0" pickOnBounds="true">
+                                 <image>
+                                    <Image url="@../img/arrow-download-install-save-document-file-36da3a2e21defbd9-512x512.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </JFXButton>
+                        <Label fx:id="descmlab" layoutX="66.0" layoutY="37.0" opacity="0.0" text="Description Modifiée" textFill="#c30303" underline="true">
+                           <font>
+                              <Font size="10.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="govmlab" layoutX="67.0" layoutY="237.0" opacity="0.0" text="Governorat Modifiée" textFill="#c30303" underline="true">
+                           <font>
+                              <Font size="10.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="villemlab" layoutX="73.0" layoutY="295.0" opacity="0.0" text="Ville Modifiée" textFill="#c30303" underline="true">
+                           <font>
+                              <Font size="10.0" />
+                           </font>
+                        </Label>
+                        <JFXTextField fx:id="inputim" layoutX="459.0" layoutY="33.0" visible="false" />
+                        <Label fx:id="picmlab" layoutX="498.0" layoutY="68.0" opacity="0.0" text="Image Modifiée" textFill="#c30303" underline="true">
+                           <font>
+                              <Font size="10.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </AnchorPane>
+                  <Pane prefHeight="143.0" prefWidth="662.0" style="-fx-background-color: #7fbf9d;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <effect>
+                        <DropShadow color="#063c32" height="25.16" radius="12.385" width="26.38" />
+                     </effect>
+                     <children>
+                        <Label fx:id="affichnom" layoutX="99.0" layoutY="104.0" text="Label" textFill="WHITE">
+                           <font>
+                              <Font name="AirstreamNF" size="30.0" />
+                           </font>
+                           <effect>
+                              <DropShadow color="#446b56" />
+                           </effect>
+                        </Label>
+                        <Label fx:id="idl" layoutX="39.0" layoutY="27.0" opacity="0.0" text="Label" />
+                     </children>
+                  </Pane>
+                  <AnchorPane layoutX="430.0" layoutY="61.0" style="-fx-background-radius: 25;">
+                     <children>
+                        <ImageView fx:id="affichim" fitHeight="200.0" fitWidth="223.0" nodeOrientation="INHERIT" preserveRatio="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <viewport>
+                              <Rectangle2D minX="4.0" />
+                           </viewport>
+                           <effect>
+                              <DropShadow />
+                           </effect>
+                        </ImageView>
+                        <JFXButton fx:id="picsicon" contentDisplay="GRAPHIC_ONLY" layoutX="7.0" layoutY="9.0" onAction="#picSub" opacity="0.0" prefHeight="39.0" prefWidth="49.0">
+                           <graphic>
+                              <ImageView fitHeight="24.0" fitWidth="25.0" pickOnBounds="true">
+                                 <image>
+                                    <Image url="@../img/arrow-download-install-save-document-file-36da3a2e21defbd9-512x512.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </JFXButton>
+                        <JFXButton fx:id="picmicon" contentDisplay="GRAPHIC_ONLY" layoutX="182.0" layoutY="9.0" onAction="#picModif" prefHeight="24.0" prefWidth="36.0">
+                           <graphic>
+                              <ImageView fitHeight="24.0" fitWidth="25.0" pickOnBounds="true">
+                                 <image>
+                                    <Image url="@../img/pencil_tip1600.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </JFXButton>
+                     </children>
+                     <padding>
+                        <Insets right="4.0" />
+                     </padding>
+                  </AnchorPane>
+               </children>
+               <effect>
+                  <DropShadow />
+               </effect>
+            </AnchorPane>
+        </items>
+      </SplitPane>
+   </children>
+</AnchorPane>

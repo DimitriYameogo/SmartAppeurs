@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXCheckBox?>
+<?import com.jfoenix.controls.JFXDatePicker?>
+<?import com.jfoenix.controls.JFXTextArea?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.ToggleButton?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.effect.InnerShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="575.0" prefWidth="694.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.rando.GUI.EventpageController">
+   <children>
+      <AnchorPane layoutY="86.0" prefHeight="489.0" prefWidth="719.0">
+         <children>
+            <ScrollPane prefHeight="474.0" prefWidth="710.0">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="542.0" prefWidth="694.0">
+                     <children>
+                        <JFXTextField fx:id="transpevent" editable="false" focusColor="#009688" labelFloat="true" layoutX="25.0" layoutY="462.0" prefHeight="24.0" prefWidth="167.0" promptText="Transport :" unFocusColor="#009688" visible="false" />
+                        <JFXTextField fx:id="titevent" focusColor="#009688" labelFloat="true" layoutX="25.0" layoutY="26.0" prefHeight="24.0" prefWidth="258.0" promptText="Titres:" unFocusColor="#009688">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                        </JFXTextField>
+                        <JFXTextField fx:id="lieuevent" editable="false" focusColor="#009688" labelFloat="true" layoutX="416.0" layoutY="236.0" prefHeight="24.0" prefWidth="199.0" promptText="Lieu :" unFocusColor="#009688" />
+                        <AnchorPane layoutX="351.0" layoutY="372.0" prefHeight="181.0" prefWidth="315.0">
+                           <effect>
+                              <DropShadow />
+                           </effect>
+                        </AnchorPane>
+                        <JFXDatePicker fx:id="datevent" layoutX="25.0" layoutY="295.0" prefHeight="24.0" prefWidth="210.0" />
+                        <ImageView fx:id="imgevent" fitHeight="209.0" fitWidth="267.0" layoutX="406.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+                           <effect>
+                              <DropShadow />
+                           </effect></ImageView>
+                        <JFXTextField fx:id="nbrevent" editable="false" focusColor="#009688" labelFloat="true" layoutX="25.0" layoutY="364.0" prefHeight="24.0" prefWidth="167.0" promptText="Nombre de participants :" unFocusColor="#009688" />
+                        <JFXTextField fx:id="logevent" editable="false" focusColor="#009688" labelFloat="true" layoutX="25.0" layoutY="415.0" prefHeight="24.0" prefWidth="167.0" promptText="Logement :" unFocusColor="#009688" visible="false" />
+                        <JFXTextArea fx:id="descevent" editable="false" focusColor="#009688" labelFloat="true" layoutX="25.0" layoutY="101.0" prefHeight="155.0" prefWidth="341.0" promptText="Description Evenement" unFocusColor="#009688" />
+                        <JFXTextField fx:id="dureevent" editable="false" focusColor="#009688" labelFloat="true" layoutX="247.0" layoutY="295.0" prefHeight="24.0" prefWidth="116.0" promptText="Durée :" unFocusColor="#009688" />
+                        <Label layoutX="25.0" layoutY="281.0" text="Date de départ :" textFill="#009688">
+                           <font>
+                              <Font size="10.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="jourlab" layoutX="339.0" layoutY="300.0" text="Jours" textFill="#009688">
+                           <font>
+                              <Font size="10.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </AnchorPane>
+              </content>
+            </ScrollPane>
+         </children>
+      </AnchorPane>
+      <Pane fx:id="modalpane" opacity="0.45" prefHeight="474.0" prefWidth="710.0" style="-fx-background-color: black;" translateY="90.0" visible="false" />
+      <AnchorPane fx:id="paypane" prefHeight="287.0" prefWidth="428.0" translateX="150.0" translateY="-250.0">
+         <children>
+            <ImageView fitHeight="311.0" fitWidth="45.0" layoutX="44.0" pickOnBounds="true" preserveRatio="true" translateX="10.0" translateY="-100.0">
+               <image>
+                  <Image url="@../img/rope_PNG18108.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="311.0" fitWidth="45.0" layoutX="347.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true" translateY="-100.0">
+               <image>
+                  <Image url="@../img/rope_PNG18108.png" />
+               </image>
+            </ImageView>
+            <Pane layoutX="9.0" layoutY="9.0" prefHeight="241.0" prefWidth="414.0" style="-fx-background-color: #7fbf9d;">
+               <effect>
+                  <InnerShadow blurType="GAUSSIAN">
+                     <input>
+                        <DropShadow />
+                     </input>
+                  </InnerShadow>
+               </effect>
+               <children>
+                  <ToggleButton fx:id="tgl" layoutX="23.0" layoutY="49.0" mnemonicParsing="false" onAction="#ptogglehandle" prefHeight="129.0" prefWidth="214.0" selected="true" stylesheets="@togglebutt.css" textFill="#32f0e0">
+                     <font>
+                        <Font size="25.0" />
+                     </font>
+                     <graphic>
+                        <JFXCheckBox fx:id="checktogg" alignment="TOP_LEFT" blendMode="COLOR_DODGE" checkedColor="#1b8a7e" contentDisplay="BOTTOM" disable="true" prefHeight="27.0" prefWidth="206.0" text="Payer le jour de l'evenement " textFill="#32f0e0" unCheckedColor="#32f0e0">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </JFXCheckBox>
+                     </graphic>
+                  </ToggleButton>
+                  <Label layoutX="300.0" layoutY="83.0" text="Votre Code :" textFill="#11514a" />
+                  <Label fx:id="thesecretCode" layoutX="300.0" layoutY="106.0" prefHeight="16.0" prefWidth="60.0" text="Label" textFill="#11514a" underline="true" />
+                  <JFXButton fx:id="confP" layoutX="151.0" layoutY="188.0" onAction="#cParticiper" text="Confirmer" textFill="#11514a">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXButton fx:id="goaway" layoutX="382.0" layoutY="5.0" onAction="#goawayha" style="-fx-background-color: #009688;" text="X" textFill="#32f0e0">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                  </JFXButton>
+                  <Label layoutX="32.0" layoutY="34.0" text="Mode de payemant :" textFill="#11514a" />
+                  <ImageView blendMode="MULTIPLY" fitHeight="32.0" fitWidth="45.0" layoutX="43.0" layoutY="-1.0" pickOnBounds="true" preserveRatio="true" rotate="140.7">
+                     <image>
+                        <Image url="@../img/hidden-meadows-rope-knot.png" />
+                     </image>
+                     <effect>
+                        <DropShadow />
+                     </effect>
+                  </ImageView>
+                  <ImageView blendMode="MULTIPLY" fitHeight="32.0" fitWidth="45.0" layoutX="338.0" layoutY="1.0" pickOnBounds="true" preserveRatio="true" rotate="-115.8">
+                     <image>
+                        <Image url="@../img/hidden-meadows-rope-knot.png" />
+                     </image>
+                     <effect>
+                        <DropShadow />
+                     </effect>
+                  </ImageView>
+                  <Label layoutX="67.0" layoutY="122.0" text="Veuillez Copier ce code :" textFill="#32f0e0">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="paypane1" layoutX="10.0" layoutY="10.0" prefHeight="257.0" prefWidth="358.0" translateX="150.0" translateY="-250.0">
+         <children>
+            <ImageView fitHeight="311.0" fitWidth="45.0" layoutX="44.0" layoutY="-34.0" pickOnBounds="true" preserveRatio="true" translateX="10.0" translateY="-100.0">
+               <image>
+                  <Image url="@../img/rope_PNG18108.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="311.0" fitWidth="45.0" layoutX="347.0" layoutY="-24.0" pickOnBounds="true" preserveRatio="true" translateY="-100.0">
+               <image>
+                  <Image url="@../img/rope_PNG18108.png" />
+               </image>
+            </ImageView>
+            <Pane layoutX="9.0" layoutY="9.0" prefHeight="191.0" prefWidth="414.0" style="-fx-background-color: #7fbf9d;">
+               <effect>
+                  <InnerShadow blurType="GAUSSIAN">
+                     <input>
+                        <DropShadow />
+                     </input>
+                  </InnerShadow>
+               </effect>
+               <children>
+                  <JFXButton fx:id="goaway1" layoutX="382.0" layoutY="5.0" onAction="#goawayho" style="-fx-background-color: #009688;" text="X" textFill="#32f0e0">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                  </JFXButton>
+                  <ImageView blendMode="MULTIPLY" fitHeight="32.0" fitWidth="45.0" layoutX="43.0" layoutY="-1.0" pickOnBounds="true" preserveRatio="true" rotate="140.7">
+                     <image>
+                        <Image url="@../img/hidden-meadows-rope-knot.png" />
+                     </image>
+                     <effect>
+                        <DropShadow />
+                     </effect>
+                  </ImageView>
+                  <ImageView blendMode="MULTIPLY" fitHeight="32.0" fitWidth="45.0" layoutX="338.0" layoutY="1.0" pickOnBounds="true" preserveRatio="true" rotate="-115.8">
+                     <image>
+                        <Image url="@../img/hidden-meadows-rope-knot.png" />
+                     </image>
+                     <effect>
+                        <DropShadow />
+                     </effect>
+                  </ImageView>
+                  <Label layoutX="60.0" layoutY="77.0" text="Vous voulez vraiment annuler la participation ?" textFill="#11514a">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <JFXButton layoutX="264.0" layoutY="128.0" onAction="#cAnnulep" text="Oui" textFill="#11514a">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXButton layoutX="84.0" layoutY="128.0" onAction="#goawayho" text="Non" textFill="#11514a">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </JFXButton>
+               </children>
+            </Pane>
+         </children>
+      </AnchorPane>
+      <Pane prefHeight="91.0" prefWidth="717.0" style="-fx-background-color: #7fbf9d;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <effect>
+            <DropShadow color="#063c32" height="25.16" radius="12.385" width="26.38" />
+         </effect>
+         <children>
+            <Label fx:id="affichnom" layoutX="25.0" layoutY="22.0" text="Label" textFill="#11514a">
+               <font>
+                  <Font name="AirstreamNF" size="30.0" />
+               </font>
+               <effect>
+                  <DropShadow color="#446b56" />
+               </effect>
+               <graphic>
+                  <ImageView fitHeight="69.0" fitWidth="71.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../img/profile-icon-28.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Label>
+            <Label fx:id="idl" layoutX="39.0" layoutY="27.0" opacity="0.0" text="Label" />
+            <JFXButton fx:id="thePbutt" layoutX="534.0" layoutY="46.0" onAction="#thePhandle" onMouseEntered="#onentr" onMouseExited="#onexit" prefHeight="32.0" prefWidth="151.0" style="-fx-background-color: #009688;" text="Participer" textFill="#abfcf4" />
+            <Label fx:id="idevent" layoutX="554.0" layoutY="78.0" text="Votre Code :" textFill="#009688" visible="false">
+               <font>
+                  <Font size="9.0" />
+               </font>
+               <effect>
+                  <DropShadow color="WHITE" />
+               </effect></Label>
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>

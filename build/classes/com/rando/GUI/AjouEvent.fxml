@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXCheckBox?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXDatePicker?>
+<?import com.jfoenix.controls.JFXDialog?>
+<?import com.jfoenix.controls.JFXTextArea?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import com.jfoenix.controls.JFXTimePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="575.0" prefWidth="727.0" style="-fx-background-color: #389a7f;" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.rando.GUI.AjouEventController">
+   <children>
+      <AnchorPane layoutY="33.0" prefHeight="504.0" prefWidth="727.0" style="-fx-background-color: #7fbf9d;" AnchorPane.bottomAnchor="38.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="33.0">
+         <children>
+            <JFXTextField fx:id="nomevent" blendMode="COLOR_DODGE" focusColor="#9af5ec" labelFloat="true" layoutX="46.0" layoutY="15.0" prefHeight="24.0" prefWidth="232.0" promptText="Titre :" unFocusColor="#027955" />
+            <JFXTextField fx:id="longlieu" blendMode="COLOR_DODGE" focusColor="#99f5ed" labelFloat="true" layoutX="46.0" layoutY="312.0" prefHeight="24.0" prefWidth="151.0" promptText="Durée :" unFocusColor="#027955" />
+            <JFXTextArea fx:id="descevent" blendMode="COLOR_DODGE" focusColor="#99f5ed" labelFloat="true" layoutX="46.0" layoutY="59.0" prefHeight="118.0" prefWidth="251.0" promptText=" Description :" unFocusColor="#027955" />
+            <JFXButton buttonType="RAISED" cache="true" layoutX="252.0" layoutY="437.0" onAction="#handleajoutevent" prefHeight="50.0" prefWidth="184.0" ripplerFill="#ddebe6" style="-fx-background-color: #389a7f;" text="Enregistrer" textFill="#48c9b0" textOverrun="CLIP">
+               <font>
+                  <Font name="AirstreamNF" size="27.0" />
+               </font>
+            </JFXButton>
+            <ImageView fx:id="newtag" fitHeight="161.0" fitWidth="139.0" layoutX="556.0" layoutY="-15.0" onDragDetected="#shiverImage" onMouseEntered="#shiverImage" pickOnBounds="true" preserveRatio="true" AnchorPane.rightAnchor="39.76470947265625">
+               <image>
+                  <Image url="@../img/nouveaubanner.png" />
+               </image>
+               <effect>
+                  <DropShadow color="#297c65" />
+               </effect>
+            </ImageView>
+            <Text fill="#3b270a00" fontSmoothingType="LCD" layoutX="568.9999847412109" layoutY="94.0" strokeDashOffset="1.0" strokeLineJoin="ROUND" text="Evenement" wrappingWidth="106.99999809265137" AnchorPane.rightAnchor="51.000017166137695">
+               <font>
+                  <Font name="AirstreamNF" size="27.0" />
+               </font>
+               <stroke>
+                  <LinearGradient endX="1.0" endY="1.0">
+                     <stops>
+                        <Stop color="#05ffaa" />
+                        <Stop color="#30684a" offset="0.0078125" />
+                        <Stop color="#0aa67ad9" offset="0.99609375" />
+                        <Stop color="#054d29" offset="1.0" />
+                     </stops>
+                  </LinearGradient>
+               </stroke>
+               <effect>
+                  <DropShadow blurType="ONE_PASS_BOX" color="#1eb05dbf" height="17.59" radius="9.1475" />
+               </effect>
+            </Text>
+            <Label fx:id="nomlieuc" layoutX="46.0" layoutY="59.0" opacity="0.0" prefHeight="24.0" prefWidth="251.0" textFill="#cd0000" underline="true" wrapText="true">
+               <font>
+                  <Font size="9.0" />
+               </font>
+               <effect>
+                  <DropShadow blurType="ONE_PASS_BOX" radius="26.8525" width="88.41" />
+               </effect>
+            </Label>
+            <JFXDialog layoutX="297.0" layoutY="272.0" prefHeight="29.0" prefWidth="163.0" />
+            <JFXComboBox fx:id="combolieu" blendMode="COLOR_DODGE" focusColor="#99f5ed" labelFloat="true" layoutX="46.0" layoutY="197.0" onMouseClicked="#comborefresh" prefHeight="24.0" prefWidth="211.0" promptText="Lieu :" unFocusColor="#027955" />
+            <JFXDatePicker fx:id="datepick" blendMode="COLOR_DODGE" layoutX="45.0" layoutY="236.0" prefHeight="24.0" prefWidth="221.0" promptText="Date de départ: " />
+            <JFXTimePicker fx:id="timepick" blendMode="COLOR_DODGE" layoutX="45.0" layoutY="274.0" prefHeight="24.0" prefWidth="221.0" />
+            <JFXCheckBox fx:id="checklog" blendMode="COLOR_DODGE" checkedColor="#009688" layoutX="90.0" layoutY="354.0" onAction="#ckeckloghandle" prefHeight="18.0" prefWidth="131.0" text="Logement" textFill="#99f5ed" unCheckedColor="#027955" />
+            <JFXCheckBox fx:id="checktransp" blendMode="COLOR_DODGE" checkedColor="#009688" layoutX="91.0" layoutY="394.0" onAction="#checktranshandle" text="Transport" textFill="#99f5ed" unCheckedColor="#027955" />
+            <JFXComboBox fx:id="combotransp" blendMode="COLOR_DODGE" focusColor="#99f5ed" labelFloat="true" layoutX="222.0" layoutY="386.0" prefHeight="24.0" prefWidth="211.0" promptText="Transport :" unFocusColor="#027955" visible="false" />
+            <JFXComboBox fx:id="combolog" blendMode="COLOR_DODGE" focusColor="#99f5ed" labelFloat="true" layoutX="221.0" layoutY="347.0" prefHeight="24.0" prefWidth="211.0" promptText="Logement :" unFocusColor="#027955" visible="false" />
+            <Label blendMode="COLOR_DODGE" layoutX="172.0" layoutY="316.0" text="Jours" textFill="#009688" />
+            <AnchorPane fx:id="infolieu" layoutX="344.0" layoutY="170.0" prefHeight="162.0" prefWidth="341.0" visible="false">
+               <children>
+                  <Text fill="#7fbf9d" layoutY="46.0" strokeType="OUTSIDE" strokeWidth="0.0" text="&lt;&lt;">
+                     <font>
+                        <Font name="System Bold" size="23.0" />
+                     </font>
+                     <effect>
+                        <DropShadow height="35.66" radius="14.397499999999999" spread="0.08" width="23.93" />
+                     </effect>
+                  </Text>
+                  <Pane layoutX="32.0" layoutY="1.0" prefHeight="161.0" prefWidth="322.0" style="-fx-background-color: #7fbf9d;">
+                     <children>
+                        <ImageView fx:id="uploadimg" fitHeight="118.0" fitWidth="174.0" layoutX="163.0" layoutY="16.0" pickOnBounds="true" preserveRatio="true">
+                           <effect>
+                              <DropShadow />
+                           </effect>
+                        </ImageView>
+                        <Label layoutX="16.0" layoutY="14.0" text="Nom : " textFill="#027955" />
+                        <Label layoutX="18.0" layoutY="108.0" text="Ville : " textFill="#027955" />
+                        <Label layoutX="15.0" layoutY="59.0" text="Governorat : " textFill="#027955" />
+                        <Label fx:id="vlieue" layoutX="86.0" layoutY="108.0" text="Label" textFill="#027955" />
+                        <Label fx:id="nomlieue" layoutX="86.0" layoutY="14.0" text="Label" textFill="#027955" />
+                        <Label fx:id="govlieu" layoutX="86.0" layoutY="59.0" text="Label" textFill="#027955" />
+                     </children>
+                     <effect>
+                        <DropShadow color="#000000ec" />
+                     </effect>
+                  </Pane>
+               </children>
+            </AnchorPane>
+            <Label fx:id="idlieu" layoutX="351.0" layoutY="19.0" text="Label" />
+            <Text fx:id="buttaffichlieu" fill="#7fbf9d" layoutX="270.0" layoutY="217.0" onMouseClicked="#affichinfolieu" strokeType="OUTSIDE" strokeWidth="0.0" text="&gt;" visible="false">
+               <font>
+                  <Font name="System Bold" size="23.0" />
+               </font>
+               <effect>
+                  <DropShadow height="35.66" radius="14.397499999999999" spread="0.08" width="23.93" />
+               </effect>
+            </Text>
+            <Label fx:id="iduser" layoutX="419.0" layoutY="19.0" text="Label" />
+            <JFXButton fx:id="nvlieubutton" layoutX="286.0" layoutY="203.0" onAction="#newlieuhandle" style="-fx-background-color: #389a7f;" text="Nouveau Lieu" textFill="#99f5ed" visible="false">
+               <font>
+                  <Font name="System Bold Italic" size="11.0" />
+               </font>
+            </JFXButton>
+         </children>
+         <effect>
+            <DropShadow />
+         </effect>
+      </AnchorPane>
+   </children>
+</AnchorPane>
