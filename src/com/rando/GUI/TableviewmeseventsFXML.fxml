@@ -81,6 +81,11 @@
                               </JFXCheckBox>
                               <JFXComboBox fx:id="cmlog" focusColor="#117864" layoutX="107.0" layoutY="322.0" prefHeight="24.0" prefWidth="80.0" />
                               <JFXComboBox fx:id="cmtran" focusColor="#117864" layoutX="107.0" layoutY="364.0" prefHeight="24.0" prefWidth="80.0" />
+                              <JFXButton layoutX="178.0" layoutY="2.0" onAction="#exitmodifev" prefHeight="24.0" prefWidth="25.0" text="X" textFill="#d00d0d">
+                                 <font>
+                                    <Font name="System Bold" size="14.0" />
+                                 </font>
+                              </JFXButton>
                            </children>
                            <effect>
                               <InnerShadow color="#099461" />
@@ -121,7 +126,7 @@
               <content>
                 <AnchorPane fx:id="anpartevent" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: white;">
                      <children>
-                        <TableView fx:id="tabmyevent" layoutY="6.0" prefHeight="466.0" prefWidth="710.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                        <TableView fx:id="tabmyevent" layoutX="16.0" layoutY="6.0" prefHeight="466.0" prefWidth="694.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="16.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                           <columns>
                             <TableColumn fx:id="nevtjp" prefWidth="138.0" text="Nom  Evenement" />
                             <TableColumn fx:id="lieujp" minWidth="0.0" prefWidth="119.0" text="Lieu" />

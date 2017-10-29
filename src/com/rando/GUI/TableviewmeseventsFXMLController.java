@@ -128,7 +128,7 @@ Wrappe lp= new Wrappe();
     @FXML
     private TableColumn<Eventin, String> lieujp;
     @FXML
-    private TableColumn<Eventin, Date> datejp;
+    private TableColumn<Eventin, String> datejp;
     @FXML
     private TableColumn<Eventin,String> dureejp;
     @FXML
@@ -158,7 +158,11 @@ Wrappe lp= new Wrappe();
 
             }
         });
+   
 
+    
+    
+        
     }
 
     public void resetTableData(List<WrapEvLi> list) throws MalformedURLException {
@@ -189,33 +193,34 @@ Wrappe lp= new Wrappe();
         propev.setItems(data);
 
     }
-    /*public void resetTablejp(List<Eventin> list) throws MalformedURLException {
+    public void resetTablejp(List<Eventin> list) throws MalformedURLException {
 
 
         List<Eventin> res = jp.displayAll(Integer.parseInt(idus.getText()));
         ObservableList<Eventin> data = FXCollections.observableArrayList(res);
 
-        Image.setCellValueFactory(new PropertyValueFactory<>("img"));
-        Image.setCellFactory(param -> new ImageTableCell<>());
+      
 
-        nom.setCellValueFactory(
+        nevtjp.setCellValueFactory(
                 new PropertyValueFactory<>("nom")
         );
-
-        date.setCellValueFactory(
-                new PropertyValueFactory<>("date")
+ dureejp.setCellValueFactory(
+                new PropertyValueFactory<>("duree")
+        );
+        datejp.setCellValueFactory(
+                new PropertyValueFactory<>("datee")
         );
 
-        lieu.setCellValueFactory(
-                new PropertyValueFactory<>("lieu")
+        lieujp.setCellValueFactory(
+                new PropertyValueFactory<>("noml")
         );
-        nbrP.setCellValueFactory(
-                new PropertyValueFactory<>("nbr")
+        codeev.setCellValueFactory(
+                new PropertyValueFactory<>("evcode")
         );
 
-        propev.setItems(data);
+       tabmyevent.setItems(data);
 
-    }*/
+    }
  public void resetTablelp(List<Wrappe> list) throws MalformedURLException {
 
         List<Wrappe> res = lp.displayAll(idevtsel);
@@ -318,6 +323,12 @@ Wrappe lp= new Wrappe();
         idus.setText(id);
         try {
             // TODO
+                try {   List<Eventin> listtForm = new ArrayList<>();
+            listtForm = jp.displayAll(Integer.parseInt(idus.getText()));
+            resetTablejp(listtForm);
+        } catch (MalformedURLException ex) {
+            Logger.getLogger(TableviewmeseventsFXMLController.class.getName()).log(Level.SEVERE, null, ex);
+        }
 
             List<WrapEvLi> listForm = new ArrayList<>();
 
@@ -415,6 +426,11 @@ idevtsel=me.getId();
     
     
     
+    }
+
+    @FXML
+    private void exitmodifev(ActionEvent event) {
+        anchormodif.setVisible(false);
     }
 
     private class ImageTableCell<S> extends TableCell<S, Image> {

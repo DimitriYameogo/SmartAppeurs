@@ -22,14 +22,15 @@ import javafx.collections.FXCollections;
  * @author esprit
  */
 public class Eventin {
+
     private int idus;
     private int idevent;
     private String evcode;
     private String Lieu;
-    private Date date;
+    private String datee;
     private String duree;
     private String noml;
-        private String nom;
+    private String nom;
 
     public String getNom() {
         return nom;
@@ -46,9 +47,10 @@ public class Eventin {
     public void setNoml(String noml) {
         this.noml = noml;
     }
-Connection cnx;
+    Connection cnx;
+
     public Eventin() {
-         cnx=ConnectionRando.getInstance().getConnection();
+        cnx = ConnectionRando.getInstance().getConnection();
     }
 
     public int getIdus() {
@@ -83,12 +85,12 @@ Connection cnx;
         this.Lieu = Lieu;
     }
 
-    public Date getDate() {
-        return date;
+    public String getDatee() {
+        return datee;
     }
 
-    public void setDate(Date date) {
-        this.date = date;
+    public void setDatee(String date) {
+        this.datee = date;
     }
 
     public String getDuree() {
@@ -98,40 +100,53 @@ Connection cnx;
     public void setDuree(String duree) {
         this.duree = duree;
     }
-      public List<Eventin> displayAll(int idus) throws MalformedURLException{
-List<Eventin> mal =  FXCollections.observableArrayList();
- 
-            try {   
-    String req="select idevent , evcode from participants where iduser='"+idus+"'";
-   
-                Statement t =cnx.createStatement();
-                 ResultSet rs = t.executeQuery(req);
-                Statement t2 =cnx.createStatement();
-                   Statement t3 =cnx.createStatement();
-                while(rs.next()){ 
-                  Eventin w =new Eventin();
-                   String ss =rs.getString("idevent");
-             String req2="select nom , lieu , durée, date from evenement where (idevent ='"+ss+"') ";
-               ResultSet rs1 = t2.executeQuery(req2);
-                 String s =rs.getString("idlieu");
-   String req3="select nomlieu from lieu where (idevent ='"+ss+"') ";
-       ResultSet rs2 = t3.executeQuery(req3);        
-               rs1.next();
-               rs2.next();
-w.setDate(rs1.getDate("date"));
-w.setDuree(""+rs1.getInt("durée")+"");
-w.setEvcode(rs.getString("evcode"));
-w.setNoml(rs2.getString("nomlieu"));
-w.setNom(rs1.getString("nom"));
 
-            mal.add(w);
-                    
-            
-                }
+    public List<Eventin> displayAll(int idus) throws MalformedURLException {
+        List<Eventin> mal = FXCollections.observableArrayList();
+
+        try {
+            String req = "select idevent , evcode from participants where (iduser='" + idus + "')";
+
+            Statement t = cnx.createStatement();
+            ResultSet rs = t.executeQuery(req);
+
+            while (rs.next()) {
+                Eventin w = new Eventin();
+                int ss = rs.getInt(1);
+                  w.setEvcode(rs.getString(2));
+                String req2 = "select nom , lieu , durée, date  from evenement where (idevent ='" + ss + "') ";
+                Statement t2 = cnx.createStatement();
+                ResultSet rs1 = t2.executeQuery(req2);
+
+                String s;
+                rs1.next();
+                  w.setDatee(rs1.getDate("date").toString());
+                  System.out.println("blakhhh"+w.getDatee());
+        w.setDuree("" + rs1.getInt("durée") + "");
+               w.setNom(rs1.getString("nom"));
+                System.out.println("12345665" + rs1.getString(2));
+                s = rs1.getString(2);
+                String req3 = "select nomlieu from lieu where (idlieu ='" + s + "') ";
                 
-            } catch (SQLException ex) {
-                Logger.getLogger(CRUDevent.class.getName()).log(Level.SEVERE, null, ex);
+                
+                Statement t3 = cnx.createStatement();
+                ResultSet rs2 = t3.executeQuery(req3);
+
+                rs2.next();
+              
+        
+              
+                w.setNoml(rs2.getString("nomlieu"));
+         
+
+                mal.add(w);
+
             }
-    return mal;
+
+        } catch (SQLException ex) {
+            Logger.getLogger(CRUDevent.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        System.out.println(mal);
+        return mal;
     }
 }
